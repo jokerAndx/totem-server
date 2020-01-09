@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiger.totem.mapper.AuthorityMapper">
+    <!-- 通过帐号获取员工信息 -->
+    <select id="qryUserByAccount" resultType="com.tiger.totem.model.UserVO">
+        SELECT id,name,age,telephone,gender,id_number,address,edu_bg,account,password,create_date,mod_date,status
+        FROM totem_user WHERE 1=1 AND account = #{acc} AND password = #{pwd}
+    </select>
+</mapper>
